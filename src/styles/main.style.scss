@@ -1,0 +1,14 @@
+@use "variables" as *;
+@use "setup.scss";
+
+//component
+@use "../styles/Scss-Component/components";
+
+// Layout
+@use "../styles/Scss-Layout/layout";
+
+//Library
+@use "../styles/Scss-Library/library";
+
+// Views
+@use "../styles/Scss-Views/views"

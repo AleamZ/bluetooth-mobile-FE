@@ -1,0 +1,93 @@
+.list-box-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background: #fff;
+    border-radius: 8px 8px 0 0;
+
+    h2 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 500;
+    }
+}
+
+.page-container {
+    background: #fff;
+    border-radius: 0 0 8px 8px;
+
+    .page-sub-container {
+        padding: 16px;
+    }
+}
+
+.list-item-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 4px 0;
+    position: relative;
+
+    &:hover {
+        .edit-icon {
+            opacity: 1;
+        }
+    }
+
+    span {
+        flex: 1;
+        margin-right: 24px; // Tạo khoảng cách cho edit icon
+    }
+
+    .edit-icon {
+        opacity: 0;
+        transition: all 0.3s;
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.45);
+        cursor: pointer;
+        padding: 4px;
+        position: absolute;
+        right: -8px; // Đẩy icon ra ngoài cùng bên phải
+        top: 50%;
+        transform: translateY(-50%);
+
+        &:hover {
+            color: #1890ff;
+        }
+    }
+}
+
+// Styles cho Menu items
+.ant-menu-item,
+.ant-menu-submenu-title {
+    .list-item-container {
+        margin: -16px -24px -16px -16px; // Mở rộng container để edit icon không bị cắt
+        padding: 16px;
+    }
+}
+
+// Custom scrollbar
+.page-sub-container {
+    max-height: calc(100vh - 220px);
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 3px;
+
+        &:hover {
+            background: #555;
+        }
+    }
+}

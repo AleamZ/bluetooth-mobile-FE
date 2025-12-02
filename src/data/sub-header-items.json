@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "title": "sản phẩm mới nhất",
+      "link": "",
+      "icon": "FaFireFlameCurved"
+    },
+    {
+      "id": 2,
+      "title": "sản phẩm mua nhiều",
+      "link": "",
+      "icon": "FaBasketShopping"
+    },
+    {
+      "id": 3,
+      "title": "sản phẩm khuyến mãi",
+      "link": "",
+      "icon": "RiDiscountPercentFill"
+    },
+    {
+      "id": 4,
+      "title": "thông tin liên hệ ",
+      "link": "",
+      "icon": "FaPhone"
+    },
+    {
+      "id": 5,
+      "title": "Tra cứu đơn hàng",
+      "link": "",
+      "icon": "FaTruckFast"
+    }
+  ]
+  

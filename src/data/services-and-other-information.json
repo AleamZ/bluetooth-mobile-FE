@@ -1,0 +1,51 @@
+{
+    "title": "Dịch vụ và thông tin khác",
+    "content": [
+      {
+        "id": 1,
+        "name": "Khách hàng doanh nghiệp (B2B)",
+        "link": "https://example.com/khach-hang-doanh-nghiep"
+      },
+      {
+        "id": 2,
+        "name": "Ưu đãi thanh toán",
+        "link": "https://example.com/uu-dai-thanh-toan"
+      },
+      {
+        "id": 3,
+        "name": "Quy chế hoạt động",
+        "link": "https://example.com/quy-che-hoat-dong"
+      },
+      {
+        "id": 4,
+        "name": "Chính sách bảo mật thông tin cá nhân",
+        "link": "https://example.com/chinh-sach-bao-mat"
+      },
+      {
+        "id": 5,
+        "name": "Chính sách Bảo hành",
+        "link": "https://example.com/chinh-sach-bao-hanh"
+      },
+      {
+        "id": 6,
+        "name": "Liên hệ hợp tác kinh doanh",
+        "link": "https://example.com/lien-he-hop-tac"
+      },
+      {
+        "id": 7,
+        "name": "Tuyển dụng",
+        "link": "https://example.com/tuyen-dung"
+      },
+      {
+        "id": 8,
+        "name": "Dịch vụ bảo hành mở rộng",
+        "link": "https://example.com/bao-hanh-mo-rong"
+      },
+      {
+        "id": 9,
+        "name": "Smember: Tích điểm & sử dụng ưu đãi",
+        "link": "https://example.com/smember"
+      }
+    ]
+  }
+  

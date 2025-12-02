@@ -1,0 +1,75 @@
+@use "../variables" as *;
+.header-title {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  border-bottom: 1px solid $border-color-light;
+}
+
+.content-wrapper {
+  display: flex;
+  .right-content {
+    flex: 8;
+  }
+
+  .left-content {
+    flex: 4;
+  }
+}
+
+//info-product
+.info-product-container {
+  display: flex;
+  gap: 12px;
+  .info-detail {
+    flex: 6;
+    padding: 12px;
+    border: 1px solid $border-color-light;
+    @include border-radius(medium);
+    .description-info {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      .item-description {
+        display: flex;
+        gap: 6px;
+        .item-content {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .branch-store {
+    flex: 6;
+
+    .header-address {
+      display: flex;
+      gap: 12px;
+
+      .button-location {
+        font-size: $font-size-md;
+        padding: 12px;
+        background-color: white;
+        border: none;
+        border: 1px solid $border-color-light;
+        @include border-radius(medium);
+        cursor: pointer;
+      }
+      .select-district {
+        font-size: $font-size-md;
+        padding: 12px;
+        background-color: white;
+        border: none;
+        border: 1px solid $border-color-light;
+        @include border-radius(medium);
+        cursor: pointer;
+        outline: none;
+      }
+    }
+  }
+  .modal-location {
+    .location-wrapper {
+      margin-top: 12px;
+    }
+  }
+}

@@ -1,0 +1,168 @@
+@use "../variables" as *;
+
+//main-header
+.main-header-container {
+  background-color: $primary-color;
+  width: 100%;
+
+  .main-header-subContainer {
+    justify-self: center;
+    max-width: $size-format;
+    width: 100%;
+    display: flex;
+    padding: 10px 0;
+
+    .main-header-fixed {
+      display: flex;
+      justify-content: space-between;
+      max-width: 320px;
+      width: 100%;
+    }
+
+    .main-header-not-fixed {
+      display: flex;
+      width: 100%;
+
+      &> :nth-child(1) {
+        max-width: 500px;
+        width: 100%;
+      }
+
+      &> :nth-child(2) {
+        max-width: 260px;
+        width: 100%;
+      }
+
+      &> :nth-child(3) {
+        max-width: 130px;
+        width: 100%;
+      }
+    }
+  }
+
+  // Mobile styles
+  .main-header-mobile {
+    padding: 5px 10px;
+
+    .main-header-mobile-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .menu-toggle {
+        height: max-content;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+      }
+    }
+
+
+  }
+}
+
+//event-reminder
+.event-remider-container {
+  width: 100%;
+  cursor: pointer;
+
+  .event-reminder-content {
+    color: black;
+    margin: 0;
+    text-align: center;
+    font-size: 16px;
+    @include font-weight(xl);
+    background: linear-gradient(to right, red, white);
+    background-clip: text;
+    font-family: "Varela Round", sans-serif;
+    font-style: normal;
+  }
+}
+
+//quick-policy
+.quick-policy-container {
+  width: 100%;
+  background-color: #ff3131;
+
+  .quick-policy-swiper-sub-container {
+    max-width: $size-format;
+    width: 100%;
+    margin: 0 auto;
+
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 80%;
+
+      .quick-policy-img {
+        width: auto;
+        height: 30px;
+        width: 80%;
+        height: auto;
+      }
+    }
+  }
+}
+
+//sub-header
+.sub-header-container {
+  background-color: $primary-color;
+  width: 100%;
+  padding: 10px 0px;
+
+  .sub-header-sub-container {
+    max-width: $size-format;
+    width: 100%;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    justify-content: space-between;
+
+    .sub-header-item {
+      display: flex;
+
+      .sub-header-icon {
+        color: white;
+        @include font-size(xl);
+      }
+
+      .sub-header-title {
+        $font-family-primary: "Roboto", sans-serif;
+        color: white;
+        text-decoration: none;
+        align-self: center;
+        margin-left: 10px;
+        @include font-size(sm);
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .quick-policy-container {
+    .quick-policy-swiper-sub-container {
+      max-width: $size-format;
+      width: 100%;
+      margin: 0 auto;
+
+      .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%; // Changed from 80% to 100%
+
+        .quick-policy-img {
+          width: 100%; // Changed from width: auto to 100%
+          height: auto;
+          max-height: 80px; // Added max-height
+          object-fit: contain; // Added to maintain aspect ratio
+        }
+      }
+    }
+  }
+}

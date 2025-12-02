@@ -1,0 +1,128 @@
+@use "../variables" as *;
+.login-container{
+  width: 100%;
+  .login-sub-container{
+    margin-top: 20px;
+      max-width: $size-format;
+      width: 100%;
+      justify-self: center;
+      .login-title{
+        justify-self: center;
+      .login-img-intro{
+        justify-self: center;
+        width: 300px; // Sửa lỗi "100px100px" thành "100px"
+        height: 100px; // Thêm chiều cao để đảm bảo ảnh không bị méo
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden; // Ẩn phần bị thừa của ảnh
+        border-radius: 8px; // Tuỳ chọn, giúp bo góc đẹp hơn
+        background: #0056b3; // Tuỳ chọn, tạo nền nếu ảnh không đủ
+          .login-img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+      .login-button-media{
+        justify-self: center;
+        display: flex;
+        gap: 10px;
+      }
+      .login-line-through{
+        display: flex;
+        margin: 20px;
+        width: 500px;
+        margin: 0 auto;
+        .login-line-through-hr{
+          border-top: 1px solid #4A5596; 
+          margin: 20px 0;            
+          width: 100%;  
+        }
+        .login-line-through-p{
+          margin: 10px;
+          color: #4A5596;
+        }
+      }
+      .login-form{
+          max-width: 480px;
+          width: 100%;
+          justify-self: center;
+          .login-input-group {
+            position: relative;
+            width: 100%;
+            margin: 20px 0;
+            .login-input {
+              width: 100%;
+              border: solid 1.5px #9e9e9e;
+              border-radius: 1rem;
+              background: none;
+              padding: 0.7rem 0 0.7rem 7px;
+              font-size: 1rem;
+              color: #000000;
+              transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
+          
+              &:focus,
+              &:valid {
+                outline: none;
+                border: 1.5px solid #1a73e8;
+              }
+          
+              &:focus ~ .login-user-label,
+              &:valid ~ .login-user-label {
+                transform: translateY(-300%) scale(0.8);
+                background-color: #ffffff;
+                padding: 0 0.1rem;
+                color: #2196f3;
+              }
+            }
+          
+          .login-user-label {
+            position: absolute;
+            left: 15px;
+            color: #AD9EAB;
+            pointer-events: none;
+            transform: translateY(-1.9rem);
+            transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+          }
+        }
+        .login-forgot-pw-container{
+          text-decoration: none;
+          .login-forgot-pw{
+            color:#777;
+            justify-self: end;
+          }
+        }
+        .login-button{
+          font-size: 16px;
+          font-weight: 600;
+          background-color: #0056b3;
+          color: #ffffff;
+          width: 100%;
+          padding: 0.7rem;
+          border-radius: 1rem;
+          border: solid 1.5px #9e9e9e;
+          cursor: pointer;
+        }   
+        .login-register-question{
+          font-size: 14px;
+          justify-self: center;
+          color: #777;
+          .login-register{
+            font-weight: 600;
+            color: #0056b3;
+            cursor: pointer;
+            text-decoration: none;
+          }
+        }
+        .login-promotion{
+          justify-self: center;
+          color: #0056b3;
+          font-weight: 600;
+        }
+      }
+  }  
+} 
+
+  

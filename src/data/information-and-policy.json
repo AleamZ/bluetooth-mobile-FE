@@ -1,0 +1,67 @@
+
+{
+    "title": "Thông tin chính sách",
+    "content": [
+        {
+            "id": 1,
+            "name": "Mua hàng và thanh toán Online",
+            "link": "./login"
+        },
+        {
+            "id": 2,
+            "name": "Mua hàng trả góp Online",
+            "link": "./login"
+        },
+        {
+            "id": 3,
+            "name": "Mua hàng trả góp bằng thẻ tín dụng",
+            "link": "./login"
+        },
+        {
+            "id": 4,
+            "name": "Chính sách giao hàng",
+            "link": "./login"
+        },
+        {
+            "id": 5,
+            "name": "Tra điểm Bluetooth Mobile",
+            "link": "./login"
+        },
+        {
+            "id": 6,
+            "name": "Xem ưu đãi Bluetooth Mobile",
+            "link": "./login"
+        },
+        {
+            "id": 7,
+            "name": "Tra thông tin bảo hành",
+            "link": "./login"
+        },
+        {
+            "id": 8,
+            "name": "Tra cứu hoá đơn điện tử",
+            "link": "./login"
+        },
+        {
+            "id": 9,
+            "name": "Bluetooth Mobile",
+            "link": "./login"
+        },
+        {
+            "id": 10,
+            "name": "Trung tâm bảo hành chính hãng",
+            "link": "./login"
+        },
+        {
+            "id": 11,
+            "name": "Quy định về việc sao lưu dữ liệu",
+            "link": "./login"
+        },
+        {
+            "id": 12,
+            "name": "Chính sách khui hộp sản phẩm Apple",
+            "link": "./login"
+        }
+    ]  
+}
+

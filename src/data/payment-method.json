@@ -1,0 +1,21 @@
+{
+    "title": "Phương Thức Thanh Toán",
+    "icons": [
+      {
+        "id": 1,
+        "imgIcon": "https://cdn2.cellphones.com.vn/x35,webp/media/logo/payment/vnpay-logo.png",
+        "urlLink": "https://www.youtube.com"
+      },
+      {
+        "id": 2,
+        "imgIcon": "https://cdn2.cellphones.com.vn/x/media/wysiwyg/momo_1.png",
+        "urlLink": "https://www.facebook.com"
+      },
+      {
+        "id": 3,
+        "imgIcon": "https://cdn2.cellphones.com.vn/x35,webp/media/logo/payment/zalopay-logo.png",
+        "urlLink": "https://www.instagram.com"
+      }
+    ]
+  }
+  

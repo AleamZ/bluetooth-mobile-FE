@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "title": "GALAXY S24 ULTRA",
+        "subtitle": "Giá tốt chốt ngay",
+        "img": "https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:90/plain/https://dashboard.cellphones.com.vn/storage/len-doi-iphone-16-pro-max-tang-airpod-4-sliding-4-2.jpg"
+    },
+    {
+        "id": 2,
+        "title": "IPHONE 16 SERIES",
+        "subtitle": "Mua ngay",
+        "img": "https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:90/plain/https://dashboard.cellphones.com.vn/storage/mc-m4-mb.jpg"
+    },
+    {
+        "id": 3,
+        "title": "OPPO FIND X8",
+        "subtitle": "Mua ngay",
+        "img": "https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:90/plain/https://dashboard.cellphones.com.vn/storage/len-doi-iphone-16-pro-max-tang-airpod-4-sliding-4-2.jpg"
+    },
+    {
+        "id": 4,
+        "title": "MACBOOK PRO 2024",
+        "subtitle": "Mua ngay",
+        "img": "https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:90/plain/https://dashboard.cellphones.com.vn/storage/len-doi-iphone-16-pro-max-tang-airpod-4-sliding-4-2.jpg"
+    },
+    {
+        "id": 5,
+        "title": "MATEPAD PRO",
+        "subtitle": "Ưu đãi tốt chốt ngay",
+        "img": "https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:90/plain/https://dashboard.cellphones.com.vn/storage/len-doi-iphone-16-pro-max-tang-airpod-4-sliding-4-2.jpg"
+    }
+]

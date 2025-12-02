@@ -1,0 +1,92 @@
+@use "../variables" as *;
+
+//contact-channels
+.contact-channels-contaitainer {
+    max-width: 300px;
+    width: 100%;
+
+    .contact-channels-title {
+        font-family: $font-family-primary;
+        @include font-size(md);
+        @include font-weight(md);
+        margin-bottom: 5px;
+    }
+
+    .contact-channels-list-icon {
+        display: flex;
+        flex-wrap: wrap;
+        max-height: 45px;
+        max-width: 300px;
+
+        .contact-channels-icon {
+            height: 100%;
+            padding: 2px;
+        }
+    }
+}
+
+//copright
+.copyright-container {
+    background-color: $primary-color;
+
+    .copyright-sub-container {
+        justify-self: center;
+        font-family: $font-family-primary;
+        max-width: $size-format;
+        width: 100%;
+        @include font-size(xs);
+    }
+}
+
+//hotline-support
+.hotline-support-container {
+    max-width: 300px;
+    width: 100%;
+
+    .hotline-support-title {
+        font-family: $font-family-primary;
+        @include font-size(md);
+        @include font-weight(md);
+        margin-bottom: 10px;
+        margin-top: 0;
+    }
+
+    .hotline-support-content {
+        font-family: $font-family-primary;
+        margin-bottom: 5px;
+        @include font-size(xs);
+        @include font-weight(sm);
+
+        .hotline-support-Link {
+            text-decoration: none;
+            @include font-weight(lg);
+            cursor: pointer;
+        }
+    }
+
+}
+
+//information-and-policy
+.information-and-policy-container {
+    max-width: 300px;
+    width: 100%;
+
+    .information-and-policy-title {
+        font-family: $font-family-primary;
+        @include font-size(md);
+        @include font-weight(md);
+        margin-bottom: 10px;
+    }
+
+    .information-and-policy-content {
+        font-family: $font-family-primary;
+        margin-bottom: 5px;
+        @include font-size(xs);
+        @include font-weight(sm);
+
+        .information-and-policy-link {
+            color: black;
+            text-decoration: none;
+        }
+    }
+}

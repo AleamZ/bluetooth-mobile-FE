@@ -1,0 +1,31 @@
+{
+    "title": "Kết nối với Blutooth Mobile Web",
+    "icons": [
+      {
+        "id": 1,
+        "imgIcon": "https://cdn2.cellphones.com.vn/44x,webp/media/logo/social/cellphones-youtube.png",
+        "urlLink": "https://www.youtube.com"
+      },
+      {
+        "id": 2,
+        "imgIcon": "https://cdn2.cellphones.com.vn/44x,webp/media/logo/social/cellphones-facebook.png",
+        "urlLink": "https://www.facebook.com"
+      },
+      {
+        "id": 3,
+        "imgIcon": "https://cdn2.cellphones.com.vn/44x,webp/media/logo/social/cellphones-instagram.png",
+        "urlLink": "https://www.instagram.com"
+      },
+      {
+        "id": 4,
+        "imgIcon": "https://cdn2.cellphones.com.vn/44x,webp/media/logo/social/cellphones-tiktok.png",
+        "urlLink": "https://www.tiktok.com"
+      },
+      {
+        "id": 5,
+        "imgIcon": "https://cdn2.cellphones.com.vn/44x,webp/media/logo/social/cellphones-zalo.png",
+        "urlLink": "https://zalo.me"
+      }
+    ]
+  }
+  

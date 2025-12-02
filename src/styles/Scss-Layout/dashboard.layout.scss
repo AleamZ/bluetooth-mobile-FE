@@ -1,0 +1,25 @@
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+
+  .menu-dashboard {
+    flex: 0 0 250px; // Kích thước của menu cố định 250px
+    padding: 20px;
+    background-color: #ffffff; // Màu nền cho menu
+    overflow-y: auto;
+    border: 1px solid #dfdfdf;
+
+    // Cố định menu khi cuộn
+    position: sticky;
+    top: 0;
+    height: calc(
+      100vh - 40px
+    ); // Đảm bảo menu chiếm toàn bộ chiều cao trừ padding
+  }
+
+  .content {
+    flex: 1;
+    padding: 20px;
+    background-color: rgb(244, 252, 252); // Màu nền cho content
+  }
+}

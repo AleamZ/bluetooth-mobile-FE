@@ -1,0 +1,30 @@
+[
+    {
+        "key": "1",
+        "productInfo": "Điện Thoại Xs 256GB Quốc Tế - Tặng Full Phụ Kiện",
+        "price": "6,210,000 - 6,880,000",
+        "stock": 119,
+        "isActive": true
+    },
+    {
+        "key": "2",
+        "productInfo": "Trắng, 64GB",
+        "price": "6,210,000",
+        "stock": 20,
+        "isActive": true
+    },
+    {
+        "key": "3",
+        "productInfo": "Đen, 64GB",
+        "price": "6,210,000",
+        "stock": 20,
+        "isActive": false
+    },
+    {
+        "key": "4",
+        "productInfo": "Vàng, 64GB",
+        "price": "6,480,000",
+        "stock": 20,
+        "isActive": true
+    }
+]

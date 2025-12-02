@@ -1,0 +1,36 @@
+[
+    {
+        "_id": "1",
+        "name": "Mua 1 tặng 4 sản phẩm phụ kiện",
+        "url": "mua-1-tang-4-san-pham-phu-kien",
+        "description": "HTML",
+        "salePrice": "500.000đ",
+        "gift": [
+            {
+                "productId": ""
+            },
+            {
+                "productId": ""
+            }
+        ],
+        "timeStart": "2025-02-23T03:08:22.650Z",
+        "timeEnd": "2050-02-23T03:08:22.650Z"
+    },
+    {
+        "_id": "2",
+        "name": "Mua 1 tặng 4 sản phẩm phụ kiện",
+        "url": "mua-1-tang-4-san-pham-phu-kien",
+        "description": "HTML",
+        "salePrice": "500.000đ",
+        "gift": [
+            {
+                "productId": ""
+            },
+            {
+                "productId": ""
+            }
+        ],
+        "timeStart": "2025-02-23T03:08:22.650Z",
+        "timeEnd": "2050-02-23T03:08:22.650Z"
+    }
+]

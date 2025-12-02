@@ -1,0 +1,108 @@
+@use "../variables" as *;
+
+//main-top-home
+.main-top-home-container {
+  margin-top: 2%;
+  border-radius: 20px;
+
+  .main-top-home-sub-container {
+    justify-self: center;
+    justify-content: space-around;
+    display: flex;
+    max-width: $size-format;
+    width: 100%;
+  }
+}
+
+//main-banner
+.main-banner {
+  position: relative;
+  max-width: 750px;
+  height: auto;
+
+  .main-banner-swiper-container {
+    width: 100%;
+
+    .banner-image {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+  .menu {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+
+    .menu-item {
+      padding: 8px 16px;
+      margin: 0 5px;
+      border: none;
+      background-color: #f0f0f0;
+      color: #333;
+      cursor: pointer;
+      font-size: 11px;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background-color: #ddd;
+      }
+
+      &.active {
+        background-color: #007bff;
+        color: #fff;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+//main-menu
+.main-menu-container {
+  max-height: fit-content;
+  max-width: 200px;
+  width: 100%;
+  margin-right: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+//sub-banner
+.sub-banner-container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  gap: 26px;
+}
+
+// Mobile styles
+@media screen and (max-width: 767px) {
+  .sub-header-container {
+    display: none;
+  }
+
+  .main-top-home-container {
+    margin-top: 0;
+    padding-top: 20px;
+
+    .main-top-home-sub-container {
+
+      .main-menu-container,
+      .sub-banner-container {
+        display: none;
+      }
+
+      .main-banner {
+        max-width: 95%;
+        width: 100%;
+
+        // Hide menu buttons on mobile
+        .menu {
+          display: none;
+        }
+      }
+    }
+  }
+}

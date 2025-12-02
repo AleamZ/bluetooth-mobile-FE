@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Đơn chờ xác nhận",
+        "number": 9
+    },
+    {
+        "title": "Đơn đã Xác Nhận",
+        "number": 0
+    },
+    {
+        "title": "Đơn trong giỏ hàng",
+        "number": 15
+    },
+    {
+        "title": "Đơn đang vận chuyển",
+        "number": 121
+    },
+    {
+        "title": "Đơn hủy",
+        "number": 12
+    }
+]

@@ -1,0 +1,63 @@
+@use "../variables" as *;
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #000;
+  background-color: rgba(230, 182, 182, 0.13);
+  border-radius: 20px;
+  width: 40px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-button-next {
+  right: -13px;
+}
+
+.swiper-button-prev {
+  left: -13px;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 20px;
+}
+
+//m-swiper
+.swiper-wrap {
+  width: 600px;
+  margin-bottom: 12px;
+
+  .banner-image {
+    width: 100%;
+    border-radius: 15px;
+  }
+}
+
+.menu {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+  padding: 6px;
+
+  .item-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border: 2px solid $border-color-light;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .active {
+    border: 2px solid red;
+  }
+}
+
+.swiper-wrapper {
+  .swiper-slide {
+    width: 200px;
+  }
+}

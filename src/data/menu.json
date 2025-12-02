@@ -1,0 +1,106 @@
+[
+    {
+      "name": "Tablet",
+      "url": "tablet",
+      "imageLogo": "https://res.cloudinary.com/dues86hho/image/upload/v1739938764/WEBBLUETOOTH/jxhz08rauldknmipxbwq.png",
+      "subCategories": [],
+      "order": 1
+    },
+    {
+      "name": "Laptop",
+      "url": "laptop",
+      "imageLogo": "https://res.cloudinary.com/dues86hho/image/upload/v1739938866/WEBBLUETOOTH/w204evwhjhhsexsmn1pm.png",
+      "subCategories": [],
+      "order": 2
+    },
+    {
+      "name": "Âm thanh",
+      "url": "amthanh",
+      "imageLogo": "https://res.cloudinary.com/dues86hho/image/upload/v1739939056/WEBBLUETOOTH/h2lwmxna2ejkvfuzp62g.png",
+      "subCategories": [],
+      "order": 3
+    },
+    {
+      "name": "Đồng Hồ",
+      "url": "dongho",
+      "imageLogo": "https://res.cloudinary.com/dues86hho/image/upload/v1739939112/WEBBLUETOOTH/lnrzvyeitvyy1bdejksb.png",
+      "subCategories": [],
+      "order": 4
+    },
+    {
+      "name": "Camera",
+      "url": "camera",
+      "imageLogo": "https://res.cloudinary.com/dues86hho/image/upload/v1739939131/WEBBLUETOOTH/o3fwlzfpplpxcnfhi19x.png",
+      "subCategories": [],
+      "order": 5
+    },
+    {
+      "name": "Phụ Kiện",
+      "url": "phukien",
+      "imageLogo": "https://res.cloudinary.com/dues86hho/image/upload/v1739939153/WEBBLUETOOTH/vdrxxlhlzrs3isnq9x1t.png",
+      "subCategories": [
+        {
+          "name": "Ốp lưng",
+          "url": "oplung",
+          "subCategories": [],
+          "order": 1
+        },
+        {
+          "name": "Củ Sạc",
+          "url": "cusac",
+          "subCategories": [],
+          "order": 2
+        }
+      ],
+      "order": 6
+    },
+    {
+      "name": "Thu cũ đổi mới",
+      "url": "thucudoimoi",
+      "imageLogo": "https://res.cloudinary.com/dues86hho/image/upload/v1739939184/WEBBLUETOOTH/xsvrneebj6vlj2ptjjr1.png",
+      "subCategories": [],
+      "order": 7
+    },
+    {
+      "name": "Hàng cũ",
+      "url": "hangcu",
+      "imageLogo": "https://res.cloudinary.com/dues86hho/image/upload/v1739939210/WEBBLUETOOTH/ia9ihwzwa8rugo33qzdu.png",
+      "subCategories": [
+        {
+          "name": "Điện thoại cũ",
+          "url": "dienthoaicu",
+          "subCategories": [],
+          "order": 1
+        },
+        {
+          "name": "Tablet Cũ",
+          "url": "tabletcu",
+          "subCategories": [],
+          "order": 2
+        }
+      ],
+      "order": 8
+    },
+    {
+      "name": "Khuyến mãi",
+      "url": "khuyenmai",
+      "imageLogo": "https://res.cloudinary.com/dues86hho/image/upload/v1739939229/WEBBLUETOOTH/o2knqpc4ljgoy6kwk3yz.png",
+      "subCategories": [],
+      "order": 9
+    },
+    {
+      "name": "Tin công nghệ",
+      "url": "tincongnghe",
+      "imageLogo": "https://res.cloudinary.com/dues86hho/image/upload/v1739939248/WEBBLUETOOTH/x1vmnazvmblsvd8iq7wi.png",
+      "subCategories": [],
+      "order": 10
+    },
+    {
+      "name": "Điện Thoại",
+      "url": "dienthoai",
+      "imageLogo": "https://res.cloudinary.com/dues86hho/image/upload/v1739943671/WEBBLUETOOTH/i2ma5qne40qrncih3emi.png",
+      "subCategories": [],
+      "order": 11
+    }
+  ]
+  

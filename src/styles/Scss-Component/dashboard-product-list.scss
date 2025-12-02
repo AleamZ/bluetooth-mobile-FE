@@ -1,0 +1,83 @@
+.product-list {
+    max-height: fit-content;
+    border: 1px solid #dfdfdf;
+    background-color: #ffffff;
+    /* Màu nền nhấn mạnh */
+    padding: 10px;
+    border-radius: 10px;
+
+    /* Bo góc */
+    .filter-row {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 20px;
+
+        input,
+        .ant-select {
+            flex: 1;
+        }
+    }
+
+    // .product-info {
+    //     min-height: max-content;
+    //     display: flex;
+    //     align-items: flex-start;
+    //     gap: 16px;
+
+    //     .thumbnail {
+    //         flex-shrink: 0;
+    //         width: 60px;
+
+    //         img {
+    //             width: 60px;
+    //             height: 60px;
+    //             object-fit: cover;
+                
+    //         }
+    //     }
+
+    //     .product-details {
+    //         strong {
+    //             font-size: 16px;
+    //         }
+
+    //         .product-stats {
+    //             display: flex;
+    //             gap: 10px;
+    //             margin-top: 5px;
+    //             font-size: 12px;
+    //             color: #888;
+    //         }
+    //     }
+
+
+
+
+    // }
+
+    .variant-info {
+
+        margin-top: -10px;
+        margin-left: 15px;
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        padding-left: 70px;
+
+        .thumbnail {
+            width: 45px;
+            height: 45px;
+            object-fit: cover;
+            border-radius: 1px;
+        }
+
+
+    }
+
+    .product-table2 {
+        background-color: #ffffff;
+        padding: 16px;
+        border-radius: 10px;
+        border: 1px solid #dfdfdf;
+    }
+}

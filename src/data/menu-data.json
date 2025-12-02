@@ -1,0 +1,74 @@
+[
+    {
+      "id": 1,
+      "title": "Điện thoại",
+      "link": "/dien-thoai",
+      "icon": "https://res.cloudinary.com/dues86hho/image/upload/v1739872068/WEBBLUETOOTH/eyswpgspwm37jmwekxpd.png",
+      "subMenu": [
+      { "title": "Overview", "link": "/dashboard/overview" },
+      { "title": "Reports", "link": "/dashboard/reports" }
+    ]
+    },
+    {
+      "id": 2,
+      "title": "Tablet",
+      "link": "/tablet",
+      "icon": "https://res.cloudinary.com/dues86hho/image/upload/v1739871951/WEBBLUETOOTH/flzutorxadwccpkoh9zy.png"
+    },
+    {
+      "id": 3,
+      "title": "Laptop",
+      "link": "/laptop",
+      "icon": "https://res.cloudinary.com/dues86hho/image/upload/v1739872068/WEBBLUETOOTH/viaiyuvm8njbrurxj6x1.png"
+    },
+    {
+      "id": 4,
+      "title": "Âm thanh",
+      "link": "/am-thanh",
+      "icon": "https://res.cloudinary.com/dues86hho/image/upload/v1739871951/WEBBLUETOOTH/qtz1boqbtqxtlpbbmq0b.png"
+    },
+    {
+      "id": 5,
+      "title": "Đồng hồ",
+      "link": "/camera",
+      "icon": "https://res.cloudinary.com/dues86hho/image/upload/v1739871951/WEBBLUETOOTH/wqtp7ksuczpkiuxtasq1.png"
+    },
+    {
+      "id": 6,
+      "title": "Camera",
+      "link": "/camera",
+      "icon": "https://res.cloudinary.com/dues86hho/image/upload/v1739872068/WEBBLUETOOTH/fgqvrx6fzegfb6bfozan.png"
+    },
+    {
+      "id": 7,
+      "title": "Phụ kiện",
+      "link": "/phu-kien",
+      "icon": "https://res.cloudinary.com/dues86hho/image/upload/v1739872068/WEBBLUETOOTH/lqdhz20tnkho6rkdy0os.png"
+    },
+   
+    {
+      "id": 8,
+      "title": "Thu cũ đổi mới",
+      "link": "/thu-cu-doi-moi",
+      "icon": "https://res.cloudinary.com/dues86hho/image/upload/v1739871951/WEBBLUETOOTH/e8msq19fqdvaxlykumcy.png"
+    },
+    {
+      "id": 9,
+      "title": "Hàng cũ",
+      "link": "/hang-cu",
+      "icon": "https://res.cloudinary.com/dues86hho/image/upload/v1739872068/WEBBLUETOOTH/spb9ijqkif81pyjkxkwt.png"
+    },
+    {
+      "id": 10,
+      "title": "Khuyến mãi",
+      "link": "/khuyen-mai",
+      "icon": "https://res.cloudinary.com/dues86hho/image/upload/v1739872068/WEBBLUETOOTH/iqfdkkwopl0wxgno2kfe.png"
+    },
+    {
+      "id": 11,
+      "title": "Tin công nghệ",
+      "link": "/tin-cong-nghe",
+      "icon": "https://res.cloudinary.com/dues86hho/image/upload/v1739872068/WEBBLUETOOTH/sppafrvoguuybnihhunp.png"
+    }
+]
+  

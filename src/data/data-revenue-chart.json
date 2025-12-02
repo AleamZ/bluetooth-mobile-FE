@@ -1,0 +1,214 @@
+{
+    "day": [
+        {
+            "time": "Day 1",
+            "revenue": 7500
+        },
+        {
+            "time": "Day 2",
+            "revenue": 10000
+        },
+        {
+            "time": "Day 3",
+            "revenue": 10000
+        },
+        {
+            "time": "Day 4",
+            "revenue": 8500
+        },
+        {
+            "time": "Day 5",
+            "revenue": 9500
+        },
+        {
+            "time": "Day 6",
+            "revenue": 11000
+        },
+        {
+            "time": "Day 7",
+            "revenue": 9800
+        },
+        {
+            "time": "Day 8",
+            "revenue": 10500
+        },
+        {
+            "time": "Day 9",
+            "revenue": 11500
+        },
+        {
+            "time": "Day 10",
+            "revenue": 9300
+        },
+        {
+            "time": "Day 11",
+            "revenue": 8900
+        },
+        {
+            "time": "Day 12",
+            "revenue": 12500
+        },
+        {
+            "time": "Day 13",
+            "revenue": 9700
+        },
+        {
+            "time": "Day 14",
+            "revenue": 10800
+        },
+        {
+            "time": "Day 15",
+            "revenue": 9800
+        },
+        {
+            "time": "Day 16",
+            "revenue": 9800
+        },
+        {
+            "time": "Day 17",
+            "revenue": 11900
+        },
+        {
+            "time": "Day 18",
+            "revenue": 9500
+        },
+        {
+            "time": "Day 19",
+            "revenue": 8600
+        },
+        {
+            "time": "Day 20",
+            "revenue": 9400
+        },
+        {
+            "time": "Day 21",
+            "revenue": 8900
+        },
+        {
+            "time": "Day 22",
+            "revenue": 9800
+        },
+        {
+            "time": "Day 23",
+            "revenue": 10700
+        },
+        {
+            "time": "Day 24",
+            "revenue": 10100
+        },
+        {
+            "time": "Day 25",
+            "revenue": 9600
+        },
+        {
+            "time": "Day 26",
+            "revenue": 9900
+        },
+        {
+            "time": "Day 27",
+            "revenue": 12300
+        },
+        {
+            "time": "Day 28",
+            "revenue": 0
+        },
+        {
+            "time": "Day 29",
+            "revenue": 0
+        },
+        {
+            "time": "Day 30",
+            "revenue": 0
+        }
+    ],
+    "month": [
+        {
+            "time": "Month 1",
+            "revenue": 300000
+        },
+        {
+            "time": "Month 2",
+            "revenue": 280000
+        },
+        {
+            "time": "Month 3",
+            "revenue": 320000
+        },
+        {
+            "time": "Month 4",
+            "revenue": 310000
+        },
+        {
+            "time": "Month 5",
+            "revenue": 290000
+        },
+        {
+            "time": "Month 6",
+            "revenue": 340000
+        },
+        {
+            "time": "Month 7",
+            "revenue": 360000
+        },
+        {
+            "time": "Month 8",
+            "revenue": 380000
+        },
+        {
+            "time": "Month 9",
+            "revenue": 400000
+        },
+        {
+            "time": "Month 10",
+            "revenue": 390000
+        },
+        {
+            "time": "Month 11",
+            "revenue": 420000
+        },
+        {
+            "time": "Month 12",
+            "revenue": 450000
+        }
+    ],
+    "quarter": [
+        {
+            "time": "Q1",
+            "revenue": 900000
+        },
+        {
+            "time": "Q2",
+            "revenue": 950000
+        },
+        {
+            "time": "Q3",
+            "revenue": 1100000
+        },
+        {
+            "time": "Q4",
+            "revenue": 9800
+        }
+    ],
+    "year": [
+        {
+            "time": "Year 2020",
+            "revenue": 4500000
+        },
+        {
+            "time": "Year 2021",
+            "revenue": 4800000
+        },
+        {
+            "time": "Year 2022",
+            "revenue": 5100000
+        },
+        {
+            "time": "Year 2023",
+            "revenue": 5300000
+        },
+        {
+            "time": "Year 2024",
+            "revenue": 5500000
+        }
+    ]
+}

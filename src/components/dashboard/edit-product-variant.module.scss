@@ -1,0 +1,54 @@
+.product-variant-container {
+    padding: 24px;
+    background: #fff;
+    border-radius: 8px;
+
+    .variant-types-section {
+        margin-bottom: 24px;
+    }
+
+    .variant-type-card {
+        border: 1px solid #f0f0f0;
+        padding: 16px;
+        margin-bottom: 16px;
+        border-radius: 4px;
+        background: #fafafa;
+
+        &:hover {
+            border-color: #d9d9d9;
+        }
+    }
+
+    .variant-header {
+        margin-bottom: 16px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .value-item {
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .add-variant-button {
+        margin-bottom: 16px;
+    }
+
+    :global {
+        .ant-form-item {
+            margin-bottom: 12px;
+        }
+
+        .ant-table {
+            margin-top: 24px;
+        }
+
+        .ant-input-number {
+            width: 100%;
+        }
+    }
+}
