@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "source": "/api/backend/(.*)",
+      "destination": "http://223.130.11.14:5000/$1"
     }
   ]
 }
