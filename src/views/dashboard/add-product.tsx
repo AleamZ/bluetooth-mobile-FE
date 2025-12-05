@@ -65,7 +65,7 @@ const AddProduct: React.FC = () => {
         payloadImage.append("image", file.originFileObj);
       });
       const responseThumbnail = await axios.post(
-        "https://bluetooth-mobile-web-backend.onrender.com/upload/single",
+        "/api/backend/upload/single",
         payloadImage,
         {
           headers: {
@@ -85,7 +85,7 @@ const AddProduct: React.FC = () => {
           payloadImages.append("images", file.originFileObj);
         });
         responseList = await axios.post(
-          "https://bluetooth-mobile-web-backend.onrender.com/upload/multiple",
+          "/api/backend/upload/multiple",
           payloadImages,
           {
             headers: {

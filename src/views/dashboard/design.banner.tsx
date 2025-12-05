@@ -96,7 +96,7 @@ const BannerDesign = () => {
         payloadImage.append("image", file.originFileObj);
       });
       responseUpload = await axios.post(
-        `${process.env.VITE_APP_API_URL}/upload/single`,
+        `${import.meta.env.VITE_APP_API_URL}/upload/single`,
         payloadImage,
         {
           headers: {
