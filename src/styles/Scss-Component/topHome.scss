@@ -18,15 +18,27 @@
 .main-banner {
   position: relative;
   max-width: 750px;
+  width: 100%;
   height: auto;
+  flex: 1;
 
   .main-banner-swiper-container {
     width: 100%;
+    height: auto;
+
+    .swiper-slide {
+      width: 100%;
+      height: auto;
+    }
 
     .banner-image {
       width: 100%;
       height: auto;
+      min-height: 400px;
+      max-height: 500px;
       object-fit: cover;
+      object-position: center;
+      display: block;
     }
   }
 
