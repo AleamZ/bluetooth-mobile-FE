@@ -21,7 +21,7 @@ import MainMenu from "../../components/top-home/main-menu";
 import MainBanner from "../../components/top-home/main-banner";
 import { SubBannerService } from "@/services/sub-banner.service";
 import { handleError } from "@/utils/catch-error";
-import axios from "axios";
+import { UploadService } from "@/services/upload.service";
 import { ISubBanner } from "@/types/sub-banner/sub-banner.interface";
 import SubBannerItem from "@/components/basicUI/sub-banner-item";
 
@@ -76,29 +76,26 @@ const SubBannerDesign = () => {
       order: 1,
       isShow: false,
     });
+    setImageList([]);
   };
 
   const handleSaveSubBanner = async () => {
-    let responseUpload = { data: { url: "" }, status: 200 };
+    let imageUrl = "";
     if (imageList.length) {
-      const payloadImage = new FormData();
-      imageList.forEach((file: any) => {
-        payloadImage.append("image", file.originFileObj);
-      });
-      responseUpload = await axios.post(
-        `${import.meta.env.VITE_APP_API_URL}/upload/single`,
-        payloadImage,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      try {
+        const uploadResult = await UploadService.uploadSingle(imageList[0].originFileObj);
+        // Xử lý cả hai trường hợp: { url: ... } hoặc { data: { url: ... } }
+        imageUrl = uploadResult?.url || uploadResult?.data?.url || "";
+      } catch (error) {
+        handleError(error);
+        return;
+      }
     }
+    
     if (action === "add") {
-      if (responseUpload.status === 200) {
+      if (imageUrl || !imageList.length) {
         const payload = {
-          image: responseUpload?.data.url,
+          image: imageUrl,
           order: subBannerCurrent.order,
           url: subBannerCurrent.url,
         };
@@ -109,6 +106,7 @@ const SubBannerDesign = () => {
           asyncDataSubBannersIsShow();
           setOpenModalSubBanner(false);
           resetDataSubBanner();
+          setImageList([]);
         } catch (error) {
           handleError(error);
         }
@@ -116,25 +114,28 @@ const SubBannerDesign = () => {
     }
 
     if (action === "edit") {
-      if (responseUpload.status === 200) {
-        const payloadUpdate = {
-          order: subBannerCurrent.order,
-          url: subBannerCurrent.url,
-          isShow: subBannerCurrent.isShow,
-        };
-        try {
-          await SubBannerService.updateSubBanner(
-            subBannerCurrent.id,
-            payloadUpdate
-          );
-          message.success("Cập nhật thành công");
-          setOpenModalSubBanner(false);
-          asyncDataSubBanners();
-          asyncDataSubBannersIsShow();
-          resetDataSubBanner();
-        } catch (error) {
-          handleError(error);
-        }
+      const payloadUpdate: any = {
+        order: subBannerCurrent.order,
+        url: subBannerCurrent.url,
+        isShow: subBannerCurrent.isShow,
+      };
+      // Nếu có ảnh mới được upload, thêm vào payload
+      if (imageList.length && imageUrl) {
+        payloadUpdate.image = imageUrl;
+      }
+      try {
+        await SubBannerService.updateSubBanner(
+          subBannerCurrent.id,
+          payloadUpdate
+        );
+        message.success("Cập nhật thành công");
+        setOpenModalSubBanner(false);
+        asyncDataSubBanners();
+        asyncDataSubBannersIsShow();
+        resetDataSubBanner();
+        setImageList([]);
+      } catch (error) {
+        handleError(error);
       }
     }
   };
@@ -329,6 +330,7 @@ const SubBannerDesign = () => {
           <Button
             type="dashed"
             onClick={() => {
+              resetDataSubBanner();
               setOpenModalSubBanner(true);
               setAction("add");
             }}

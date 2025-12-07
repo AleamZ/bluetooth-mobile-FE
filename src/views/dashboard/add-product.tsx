@@ -4,7 +4,7 @@ import CreateProductVariant from "@/components/dashboard/create-product-variant"
 import CreateProductSpecifications from "../../components/dashboard/create-product-specifications";
 import { Button, message, Spin } from "antd";
 import { ProductService } from "@/services/product.service";
-import axios from "axios";
+import { UploadService } from "@/services/upload.service";
 
 interface IFormData {
   name: string;
@@ -60,118 +60,101 @@ const AddProduct: React.FC = () => {
         message.error("Vui lòng chọn ảnh thumbnail");
         return;
       }
-      const payloadImage = new FormData();
-      thumbnail.forEach((file) => {
-        payloadImage.append("image", file.originFileObj);
-      });
-      const responseThumbnail = await axios.post(
-        "/api/backend/upload/single",
-        payloadImage,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
-      let responseList = {
-        status: 200,
-        data: {
-          urls: [],
-        },
-      };
+
+      // Upload thumbnail using UploadService
+      const responseThumbnail = await UploadService.uploadSingle(thumbnail[0].originFileObj);
+
+      // Upload multiple images if any
+      let imageUrls: string[] = [];
       if (imageList.length) {
-        const payloadImages = new FormData();
-        imageList.forEach((file) => {
-          payloadImages.append("images", file.originFileObj);
-        });
-        responseList = await axios.post(
-          "/api/backend/upload/multiple",
-          payloadImages,
-          {
-            headers: {
-              "Content-Type": "multipart/form-data",
-            },
-          }
-        );
+        const files = imageList.map(file => file.originFileObj);
+        const responseList = await UploadService.uploadMultiple(files);
+        imageUrls = responseList?.urls || responseList?.data?.urls || [];
       }
 
-      if (responseThumbnail.status === 200 && responseList.status === 200) {
-        const transformedSpecifications = specificationGroups.map((group) => ({
-          nameGroup: group.groupName,
-          specificationsSub: group.specifications
-            .filter((spec) => spec.value)
-            .map((spec) => ({
-              key: spec.name,
-              value: spec.value,
-            })),
-        }));
+      // Extract URL from response (handle both { url: ... } and { data: { url: ... } } formats)
+      const thumbnailUrl = responseThumbnail?.url || responseThumbnail?.data?.url || "";
 
-        let payload: any = {
-          name: formData.name,
-          categoryId: formData.categoryId,
-          brandId: formData.brandId,
-          description: formData.description,
-          imageThumbnailUrl: responseThumbnail.data?.url,
-          imageUrls: responseList?.data?.urls,
-          infoProduct: formData.infoProduct,
-          specifications: transformedSpecifications,
+      if (!thumbnailUrl) {
+        message.error("Upload ảnh thumbnail thất bại, vui lòng thử lại");
+        return;
+      }
+
+      const transformedSpecifications = specificationGroups.map((group) => ({
+        nameGroup: group.groupName,
+        specificationsSub: group.specifications
+          .filter((spec) => spec.value)
+          .map((spec) => ({
+            key: spec.name,
+            value: spec.value,
+          })),
+      }));
+
+      let payload: any = {
+        name: formData.name,
+        categoryId: formData.categoryId,
+        brandId: formData.brandId,
+        description: formData.description,
+        imageThumbnailUrl: thumbnailUrl,
+        imageUrls: imageUrls,
+        infoProduct: formData.infoProduct,
+        specifications: transformedSpecifications,
+      };
+
+      // Tính tổng stock của các biến thể
+      const totalStock = variantProduct.reduce(
+        (total, variant) => total + (variant.stock || 0),
+        0
+      );
+
+      // Nếu có các biến thể (ví dụ: Màu sắc với nhiều giá trị)
+      if (variantProduct.length > 1) {
+        payload = {
+          ...payload,
+          variants: variantProduct,
+          stock: totalStock, // Tổng stock của biến thể sẽ được tính vào sản phẩm chính
         };
-
-        // Tính tổng stock của các biến thể
-        const totalStock = variantProduct.reduce(
-          (total, variant) => total + (variant.stock || 0),
-          0
-        );
-
-        // Nếu có các biến thể (ví dụ: Màu sắc với nhiều giá trị)
-        if (variantProduct.length > 1) {
-          payload = {
-            ...payload,
-            variants: variantProduct,
-            stock: totalStock, // Tổng stock của biến thể sẽ được tính vào sản phẩm chính
-          };
-        }
-        // Nếu không có biến thể (chỉ có một biến thể duy nhất)
-        else if (variantProduct.length === 1) {
-          // Lấy thông tin từ biến thể và thêm vào payload
-          payload = {
-            ...payload,
-            price: variantProduct[0].price,
-            salePrice: variantProduct[0].salePrice,
-            stock: variantProduct[0].stock, // Lấy stock từ biến thể
-          };
-        }
-        // Nếu không có biến thể nào, chỉ gửi giá trị chung
-        else {
-          payload = {
-            ...payload,
-            price: formData.basePrice,
-            salePrice: formData.salePrice,
-            stock: 0, // Nếu không có biến thể thì stock sẽ là 0
-          };
-        }
-
-        // Log payload to console
-
-        await ProductService.createProduct(payload);
-
-        // Reset formData và variantProduct
-        setFormData({
-          name: "",
-          categoryId: "",
-          brandId: "",
-          basePrice: 0,
-          salePrice: 0,
-          description: "",
-          imageThumbnailUrl: "",
-          imageUrls: [],
-          infoProduct: "",
-        });
-        setVariantProduct([]);
-        setSpecificationGroups([]);
-
-        message.success("Tạo sản phẩm thành công!");
       }
+      // Nếu không có biến thể (chỉ có một biến thể duy nhất)
+      else if (variantProduct.length === 1) {
+        // Lấy thông tin từ biến thể và thêm vào payload
+        payload = {
+          ...payload,
+          price: variantProduct[0].price,
+          salePrice: variantProduct[0].salePrice,
+          stock: variantProduct[0].stock, // Lấy stock từ biến thể
+        };
+      }
+      // Nếu không có biến thể nào, chỉ gửi giá trị chung
+      else {
+        payload = {
+          ...payload,
+          price: formData.basePrice,
+          salePrice: formData.salePrice,
+          stock: 0, // Nếu không có biến thể thì stock sẽ là 0
+        };
+      }
+
+      // Log payload to console
+
+      await ProductService.createProduct(payload);
+
+      // Reset formData và variantProduct
+      setFormData({
+        name: "",
+        categoryId: "",
+        brandId: "",
+        basePrice: 0,
+        salePrice: 0,
+        description: "",
+        imageThumbnailUrl: "",
+        imageUrls: [],
+        infoProduct: "",
+      });
+      setVariantProduct([]);
+      setSpecificationGroups([]);
+
+      message.success("Tạo sản phẩm thành công!");
     } catch (error) {
       console.log({ error });
     } finally {

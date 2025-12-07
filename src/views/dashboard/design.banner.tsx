@@ -20,7 +20,7 @@ import { UploadOutlined } from "@ant-design/icons";
 import MainMenu from "../../components/top-home/main-menu";
 import SubBanner from "../../components/top-home/sub-banner";
 import { handleError } from "@/utils/catch-error";
-import axios from "axios";
+import { UploadService } from "@/services/upload.service";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { IBanner } from "@/types/main-banner/main-banner.interface";
 import { MainBannerService } from "@/services/main-banner.service";
@@ -86,69 +86,140 @@ const BannerDesign = () => {
       title: "",
       label: "",
     });
+    setImageList([]);
   };
 
-  const handleSaveSubBanner = async () => {
-    let responseUpload = { data: { url: "" }, status: 200 };
-    if (imageList.length) {
-      const payloadImage = new FormData();
-      imageList.forEach((file: any) => {
-        payloadImage.append("image", file.originFileObj);
-      });
-      responseUpload = await axios.post(
-        `${import.meta.env.VITE_APP_API_URL}/upload/single`,
-        payloadImage,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+  const handleSaveSubBanner = async (e?: React.MouseEvent<HTMLElement>) => {
+    // Prevent modal from closing automatically
+    if (e) {
+      e.preventDefault();
     }
+
+    console.log("handleSaveSubBanner called", {
+      action,
+      imageList: imageList.length,
+      bannerCurrent,
+      timestamp: new Date().toISOString()
+    });
+
+    // Validate: Phải có ảnh khi tạo mới
+    if (action === "add" && !imageList.length) {
+      message.error("Vui lòng chọn ảnh để tạo banner");
+      return;
+    }
+
+    let imageUrl = "";
+
+    if (imageList.length) {
+      try {
+        setIsLoading(true);
+        const uploadResult = await UploadService.uploadSingle(imageList[0].originFileObj);
+        console.log("Upload result:", uploadResult);
+        console.log("Upload result type:", typeof uploadResult);
+        console.log("Upload result keys:", Object.keys(uploadResult || {}));
+
+        // Xử lý cả hai trường hợp: { url: ... } hoặc { data: { url: ... } }
+        imageUrl = uploadResult?.url || uploadResult?.data?.url || "";
+        console.log("Extracted imageUrl:", imageUrl);
+
+        if (!imageUrl) {
+          console.error("Image URL is empty after upload:", uploadResult);
+          message.error("Upload ảnh thất bại, vui lòng thử lại");
+          setIsLoading(false);
+          return;
+        }
+        console.log("Upload successful, imageUrl:", imageUrl);
+      } catch (error) {
+        console.error("Upload error:", error);
+        handleError(error);
+        setIsLoading(false);
+        return;
+      }
+    }
+
+    console.log("After upload check - action:", action, "imageUrl:", imageUrl);
+
     if (action === "add") {
-      if (responseUpload.status === 200) {
-        const payload = {
-          image: responseUpload?.data.url,
-          order: bannerCurrent.order,
-          url: bannerCurrent.url,
+      console.log("Entering add action block");
+      // Validate các trường bắt buộc
+      if (!bannerCurrent.title || !bannerCurrent.label || !bannerCurrent.url) {
+        console.log("Validation failed:", {
           title: bannerCurrent.title,
           label: bannerCurrent.label,
-        };
-        try {
-          await MainBannerService.createMainBanner(payload);
-          message.success("Tạo thành công");
-          asyncDataMainBanners();
-          asyncDataMainBannersIsShow();
-          setOpenModalMainBanner(false);
-          resetDataMainBanner();
-        } catch (error) {
-          handleError(error);
-        }
+          url: bannerCurrent.url
+        });
+        message.error("Vui lòng điền đầy đủ thông tin (Title, Label, Url)");
+        setIsLoading(false);
+        return;
+      }
+
+      console.log("Validation passed, proceeding to create banner");
+
+      const payload = {
+        image: imageUrl,
+        order: bannerCurrent.order || 1,
+        url: bannerCurrent.url,
+        title: bannerCurrent.title,
+        label: bannerCurrent.label,
+      };
+      console.log("Creating banner with payload:", payload);
+      try {
+        const result = await MainBannerService.createMainBanner(payload);
+        console.log("Create banner success:", result);
+        message.success("Tạo thành công");
+        asyncDataMainBanners();
+        asyncDataMainBannersIsShow();
+        setOpenModalMainBanner(false);
+        resetDataMainBanner();
+        setImageList([]);
+      } catch (error: any) {
+        console.error("Create banner error:", error);
+        console.error("Error details:", {
+          message: error?.message,
+          response: error?.response,
+          data: error?.data,
+          errors: error?.errors
+        });
+        handleError(error);
+      } finally {
+        setIsLoading(false);
       }
     }
 
     if (action === "edit") {
-      if (responseUpload.status === 200) {
-        const payloadUpdate = {
-          image: responseUpload?.data.url,
-          url: bannerCurrent.url,
-          isShow: bannerCurrent.isShow,
-          title: bannerCurrent.title,
-          label: bannerCurrent.label,
-        };
-        try {
-          await MainBannerService.updateMainBanner(
-            bannerCurrent.id,
-            payloadUpdate
-          );
-          message.success("Cập nhật thành công");
-          setOpenModalMainBanner(false);
-          asyncDataMainBanners();
-          asyncDataMainBannersIsShow();
-          resetDataMainBanner();
-        } catch (error) {
-          handleError(error);
-        }
+      const payloadUpdate: any = {
+        url: bannerCurrent.url,
+        isShow: bannerCurrent.isShow,
+        title: bannerCurrent.title,
+        label: bannerCurrent.label,
+      };
+      // Nếu có ảnh mới được upload, thêm vào payload
+      if (imageList.length && imageUrl) {
+        payloadUpdate.image = imageUrl;
+      }
+      try {
+        const result = await MainBannerService.updateMainBanner(
+          bannerCurrent.id,
+          payloadUpdate
+        );
+        console.log("Update banner success:", result);
+        message.success("Cập nhật thành công");
+        setOpenModalMainBanner(false);
+        asyncDataMainBanners();
+        asyncDataMainBannersIsShow();
+        resetDataMainBanner();
+        setImageList([]);
+      } catch (error: any) {
+        console.error("Update banner error:", error);
+        console.error("Error details:", {
+          message: error?.message,
+          response: error?.response,
+          data: error?.data,
+          errors: error?.errors
+        });
+        handleError(error);
+      } finally {
+        setIsLoading(false);
       }
     }
   };
@@ -278,11 +349,17 @@ const BannerDesign = () => {
   const renderEditBannerModal = () => (
     <Modal
       title={action === "add" ? "Thêm Sub Banner" : "Chỉnh sửa Sub Banner"}
-      onOk={handleSaveSubBanner}
+      onOk={async (e) => {
+        console.log("Modal onOk clicked, action:", action);
+        e?.preventDefault();
+        await handleSaveSubBanner(e);
+      }}
       onCancel={handleCancelEdit}
       okText="Save"
       cancelText="Cancel"
       open={openModalMainBaner}
+      confirmLoading={isLoading}
+      okButtonProps={{ loading: isLoading }}
     >
       <div>
         <Upload name="image" maxCount={1} onChange={handleImageChange}>
